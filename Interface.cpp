@@ -66,7 +66,7 @@ void Interface::FolderMenu(Folder* folder) {
                 int noteChoice;
                 std::cin >> noteChoice;
 
-                //NoteMenu(folder->getNote(noteChoice));
+                NoteMenu(folder->getNote(noteChoice));
 
             default:
                 std::cout << "Invalid choice\n";
@@ -74,5 +74,30 @@ void Interface::FolderMenu(Folder* folder) {
     }
 }
 
+void Interface::NoteMenu(Note* note) {
+    IsNoteMenu = true;
+    while (IsNoteMenu) {
+        std::cout << "1. Edit Note Name\n2. Edit Note Content\n3. Lock Note\n4. Exit\n";
+        int choice;
+        std::cin >> choice;
+        switch (choice) {
+            case 1:
+                note->setNoteName();
+                break;
+            case 2:
+                note->setNoteContent();
+                break;
+            case 3:
+                note->setNoteIsLocked();
+                break;
+            case 4:
+                IsNoteMenu = false;
+                break;
+            default:
+                std::cout << "Invalid choice\n";
+        }
+    }
+}
 
-//risolvere problema con spazi porcodio e fai metodo noteMenu
+
+//risolvere problema con spazi porcodio

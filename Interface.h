@@ -8,7 +8,7 @@ public:
 
     void FolderMenu(Folder* folder);
 
-    //void NoteMenu(Note* note);
+    void NoteMenu(Note* note);
 private:
     bool IsRunning;
     bool IsFolderMenu;
