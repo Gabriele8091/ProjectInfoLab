@@ -10,6 +10,7 @@ void Interface::Run(Database& db) {
         std::cout << "1. Create Folder\n2. Remove Folder\n3. Show Folders\n4. Choose a Folder\n5. Exit\n";
         int choice;
         std::cin >> choice;
+       std::cin.ignore();
         switch (choice) {
             case 1:
                 db.createFolder();
@@ -47,6 +48,7 @@ void Interface::FolderMenu(Folder* folder) {
         std::cout << "1. Create Note\n2. Remove Note\n3. Show Notes\n4. Choose a Note\n5. Exit\n";
         int choice;
         std::cin >> choice;
+        std::cin.ignore();
         switch (choice) {
             case 1:
                 folder->addNote();
@@ -77,9 +79,10 @@ void Interface::FolderMenu(Folder* folder) {
 void Interface::NoteMenu(Note* note) {
     IsNoteMenu = true;
     while (IsNoteMenu) {
-        std::cout << "1. Edit Note Name\n2. Edit Note Content\n3. Lock Note\n4. Exit\n";
+        std::cout << "1. Edit Note Name\n2. Edit Note Content\n3. Lock Note\n4. Print Note \n5. Exit";
         int choice;
         std::cin >> choice;
+        std::cin.ignore();
         switch (choice) {
             case 1:
                 note->setNoteName();
@@ -91,6 +94,10 @@ void Interface::NoteMenu(Note* note) {
                 note->setNoteIsLocked();
                 break;
             case 4:
+                std::cout << "Note Name: " << note->getNoteName() << std::endl;
+                std::cout << "Note Content: " << note->getNoteContent() << std::endl;
+                break;
+            case 5:
                 IsNoteMenu = false;
                 break;
             default:
@@ -100,4 +107,3 @@ void Interface::NoteMenu(Note* note) {
 }
 
 
-//risolvere problema con spazi porcodio

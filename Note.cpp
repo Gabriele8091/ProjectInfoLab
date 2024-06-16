@@ -6,9 +6,9 @@
 
 Note::Note(int id) {
     std::cout<< "Insert Note name:" << std::endl;
-    std::cin >> NoteName;
+    getline(std::cin, NoteName);
     std::cout<< "Insert Note content:" << std::endl;
-    std::cin >> NoteContent;
+    getline(std::cin, NoteContent);
     NoteId = id;
     std::cout<< "Want to lock the note? 1=yes 0=no" << std::endl;
     int choice;
@@ -22,12 +22,12 @@ Note::Note(int id) {
 
 void Note::setNoteName() {
     std::cout<< "Insert Note name:" << std::endl;
-    std::cin >> NoteName;
+    getline(std::cin, NoteName);
 }
 
 void Note::setNoteContent() {
     std::cout<< "Insert Note content:" << std::endl;
-    std::cin >> NoteContent;
+    getline(std::cin, NoteContent);
 }
 
 std::string Note::getNoteName() const {

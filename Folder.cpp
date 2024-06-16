@@ -3,7 +3,7 @@
 
 Folder::Folder(int id) {
     std::cout << " Insert Folder Name: " << std::endl;
-    std::cin >> FolderName;
+    getline(std::cin, FolderName);
     FolderId = id;
     IsEmpty = true;
     NumberOfNotes = 1;
@@ -11,7 +11,7 @@ Folder::Folder(int id) {
 
 void Folder::setFolderName() {
     std::cout << " Insert Folder Name: " << std::endl;
-    std::cin >> FolderName;
+    getline(std::cin, FolderName);
 }
 
 int Folder::getFolderId()const {
