@@ -14,7 +14,7 @@ public:
 
     Folder* getFolder(int id);
 
-   [[nodiscard]] bool getIsEmpty()const ;
+    bool getIsEmpty()const ;
 
 private:
     int NumberOfFolders;

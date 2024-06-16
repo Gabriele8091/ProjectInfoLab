@@ -11,9 +11,9 @@ public:
 
     void setFolderName();
 
-    [[nodiscard]] int getFolderId()const;
+     int getFolderId()const;
 
-    [[nodiscard]] std::string getFolderName();
+     std::string getFolderName();
 
     void showNotes();
 
@@ -24,6 +24,8 @@ public:
     void editNote();
 
     Note *getNote(int id);
+
+        [[nodiscard]] bool getIsEmpty()const;
 
 
 private:

@@ -10,11 +10,11 @@ public:
 
     void setNoteContent();
 
-    [[nodiscard]] std::string getNoteName()const;
+     std::string getNoteName()const;
 
-    [[nodiscard]] std::string getNoteContent()const;
+     std::string getNoteContent()const;
 
-    [[nodiscard]] int getNoteId()const;
+     int getNoteId()const;
 
     void setNoteIsLocked();
 

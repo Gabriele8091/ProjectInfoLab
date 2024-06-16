@@ -16,14 +16,23 @@ void Interface::Run(Database& db) {
                 db.createFolder();
                 break;
             case 2:
-                db.removeFolder();
-                break;
+                if(db.getIsEmpty()){
+                    std::cout << "There are no folders to delete!" << std::endl;
+                    break;
+                }
+                else{
+                    db.removeFolder();
+                    break;
+                }
             case 3:
-                db.showFolders();
-                break;
-            case 5:
-                IsRunning = false;
-                break;
+                if(db.getIsEmpty()){
+                    std::cout << "There are no folders to show!" << std::endl;
+                    break;
+                }
+                else{
+                    db.showFolders();
+                    break;
+                }
             case 4:
                 db.showFolders();
                 if(db.getIsEmpty()){
@@ -31,11 +40,15 @@ void Interface::Run(Database& db) {
                     break;
                 }
                 else{
-                    std::cout << "Choose a folder: ";
+                    std::cout << "Choose a folder by his ID: ";
                     int folderChoice;
                     std::cin >> folderChoice;
                     FolderMenu(db.getFolder(folderChoice));
                 }
+                case 5:
+                IsRunning = false;
+                break;
+
             default:
                 std::cout << "Invalid choice\n";
         }
@@ -45,7 +58,7 @@ void Interface::Run(Database& db) {
 void Interface::FolderMenu(Folder* folder) {
     IsFolderMenu = true;
     while (IsFolderMenu) {
-        std::cout << "1. Create Note\n2. Remove Note\n3. Show Notes\n4. Choose a Note\n5. Exit\n";
+        std::cout <<"1. Create Note\n2. Remove Note\n3. Show Notes\n4. Choose a Note\n5. Edit the folder name\n6. Exit\n";
         int choice;
         std::cin >> choice;
         std::cin.ignore();
@@ -56,19 +69,36 @@ void Interface::FolderMenu(Folder* folder) {
             case 2:
                 folder->deleteNote();
                 break;
+
             case 3:
-                folder->showNotes();
-                break;
-            case 5:
+                if(folder->getIsEmpty()){
+                    std::cout << "There are no notes to show!" << std::endl;
+                    break;
+                }
+                else{
+                    folder->showNotes();
+                    break;
+                }
+            case 4:
+                if(folder->getIsEmpty()){
+                    std::cout << "There are no notes to choose!" << std::endl;
+                    break;
+                }
+                else {
+                    folder->showNotes();
+                    std::cout << "Choose a note by his ID: ";
+                    int noteChoice;
+                    std::cin >> noteChoice;
+
+                    NoteMenu(folder->getNote(noteChoice));
+                }
+                case 5:
+                    std::cout<<"That's the folder name, edit it as you want: "<<std::endl<<folder->getFolderName();
+                    folder->setFolderName();
+                    break;
+            case 6:
                 IsFolderMenu = false;
                 break;
-            case 4:
-                folder->showNotes();
-                std::cout<< "Choose a note: ";
-                int noteChoice;
-                std::cin >> noteChoice;
-
-                NoteMenu(folder->getNote(noteChoice));
 
             default:
                 std::cout << "Invalid choice\n";
@@ -85,11 +115,26 @@ void Interface::NoteMenu(Note* note) {
         std::cin.ignore();
         switch (choice) {
             case 1:
-                note->setNoteName();
-                break;
+                if(note->getNoteIsLocked()){
+                    std::cout << "Note is locked!" << std::endl;
+                    break;
+                }
+                else{
+                    std::cout<<"That's the note name, edit it as you want: "<<std::endl<<note->getNoteName();
+                    note->setNoteName();
+                    break;
+                }
+
             case 2:
-                note->setNoteContent();
-                break;
+                if(note->getNoteIsLocked()){
+                    std::cout << "Note is locked!" << std::endl;
+                    break;
+                }
+                else{
+                    std::cout<<"That's the note content, edit it as you want: "<<std::endl<<note->getNoteContent();
+                    note->setNoteContent();
+                    break;
+                }
             case 3:
                 note->setNoteIsLocked();
                 break;

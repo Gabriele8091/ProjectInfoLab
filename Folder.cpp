@@ -19,6 +19,7 @@ int Folder::getFolderId()const {
 }
 
 std::string Folder::getFolderName() {
+
     return FolderName;
 }
 
@@ -116,3 +117,6 @@ Note* Folder::getNote(int id) {
     }
 }
 
+bool Folder::getIsEmpty()const {
+    return IsEmpty;
+}
