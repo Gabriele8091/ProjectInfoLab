@@ -16,6 +16,8 @@ public:
 
     bool getIsEmpty()const ;
 
+    void createImportantFolder();
+
 private:
     int NumberOfFolders;
     std::map<int, Folder> datas;

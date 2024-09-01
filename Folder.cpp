@@ -120,3 +120,12 @@ Note* Folder::getNote(int id) {
 bool Folder::getIsEmpty()const {
     return IsEmpty;
 }
+
+bool Folder::getIsLocked()const {
+    return false;
+}
+
+void Folder::setImportantName() {
+    this->FolderName = "ImportantNotes";
+}
+

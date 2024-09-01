@@ -3,7 +3,8 @@
 
 Database::Database() {
     IsEmpty = true;
-    NumberOfFolders =1;
+    NumberOfFolders =0;
+    createImportantFolder();
 }
 
 void Database::createFolder() {
@@ -57,6 +58,14 @@ Folder *Database:: getFolder(int id) {
 
 bool Database::getIsEmpty()const {
     return IsEmpty;
+}
+
+void Database::createImportantFolder() {
+    Folder folder;
+    folder.setImportantName();
+    datas.insert(std::pair<int, Folder>(NumberOfFolders, folder));
+    NumberOfFolders++;
+    IsEmpty = false;
 }
 
 

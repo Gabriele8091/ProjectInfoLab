@@ -5,9 +5,11 @@
 class Folder {
 public:
 
-   explicit  Folder(int id);
+      explicit Folder(int id);
 
-   Folder() = default;
+   Folder()=default;
+
+    ~Folder() = default;
 
     void setFolderName();
 
@@ -24,9 +26,10 @@ public:
     void editNote();
 
     Note *getNote(int id);
-
         [[nodiscard]] bool getIsEmpty()const;
 
+    bool getIsLocked()const;
+    void  setImportantName();
 
 private:
     int NumberOfNotes;
