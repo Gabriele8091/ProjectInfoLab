@@ -36,9 +36,10 @@ void Folder::showNotes() {
 
 void Folder::addNote() {
     Note note(NumberOfNotes);
-    NumberOfNotes++;
     notes.insert(std::pair<int, Note>(note.getNoteId(), note));
     IsEmpty = false;
+    NumberOfNotes++;
+    notify();
 }
 
 void Folder::deleteNote() {
@@ -62,6 +63,7 @@ void Folder::deleteNote() {
             }
         }
     }
+    notify2();
 }
 
 void Folder::editNote() {
@@ -129,3 +131,36 @@ void Folder::setImportantName() {
     this->FolderName = "ImportantNotes";
 }
 
+
+void Folder::notify() {
+    for (auto &i : O) {
+        i->update();
+    }
+}
+
+void Folder::notify2() {
+    for (auto &i : O) {
+        i->update2();
+    }
+}
+
+void Folder::removeObserver(Observer* o){
+    for(auto it = O.begin(); it != O.end(); it++) {
+        if(*it == o) {
+            O.erase(it);
+            break;
+        }
+    }
+}
+
+void Folder::addobserver(Observer* o) {
+    O.push_back(o);
+}
+
+int Folder::printNoteCounter() const {
+    for (auto &i: O) {
+        i->printNoteCounter();
+    }
+    return 0;
+
+}

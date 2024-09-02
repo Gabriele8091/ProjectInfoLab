@@ -1,6 +1,6 @@
 #include<map>
 #include<iostream>
-#include"Folder.h"
+#include"NoteCounterNotifier.h"
 
 class Database {
 public:

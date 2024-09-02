@@ -79,6 +79,12 @@ build CMakeFiles/Project4.dir/Note.cpp.obj: CXX_COMPILER__Project4_unscanned_Deb
   OBJECT_DIR = CMakeFiles\Project4.dir
   OBJECT_FILE_DIR = CMakeFiles\Project4.dir
 
+build CMakeFiles/Project4.dir/NoteCounterNotifier.cpp.obj: CXX_COMPILER__Project4_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/NoteCounterNotifier.cpp || cmake_object_order_depends_target_Project4
+  DEP_FILE = CMakeFiles\Project4.dir\NoteCounterNotifier.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Project4.dir
+  OBJECT_FILE_DIR = CMakeFiles\Project4.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Project4
@@ -87,7 +93,7 @@ build CMakeFiles/Project4.dir/Note.cpp.obj: CXX_COMPILER__Project4_unscanned_Deb
 #############################################
 # Link the executable Project4.exe
 
-build Project4.exe: CXX_EXECUTABLE_LINKER__Project4_Debug CMakeFiles/Project4.dir/main.cpp.obj CMakeFiles/Project4.dir/Interface.cpp.obj CMakeFiles/Project4.dir/Database.cpp.obj CMakeFiles/Project4.dir/Folder.cpp.obj CMakeFiles/Project4.dir/Note.cpp.obj
+build Project4.exe: CXX_EXECUTABLE_LINKER__Project4_Debug CMakeFiles/Project4.dir/main.cpp.obj CMakeFiles/Project4.dir/Interface.cpp.obj CMakeFiles/Project4.dir/Database.cpp.obj CMakeFiles/Project4.dir/Folder.cpp.obj CMakeFiles/Project4.dir/Note.cpp.obj CMakeFiles/Project4.dir/NoteCounterNotifier.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Project4.dir

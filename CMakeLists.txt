@@ -12,4 +12,8 @@ add_executable(Project4 main.cpp
         Folder.h
         Note.cpp
         Note.h
+        Subject.h
+        Observer.h
+        NoteCounterNotifier.cpp
+        NoteCounterNotifier.h
 )

@@ -38,7 +38,7 @@ void Database::showFolders() {
     }
     else{
         for(auto it = datas.begin(); it != datas.end(); it++) {
-            std::cout << "Folder ID: " << it->first << " Folder Name: " << it->second.getFolderName() << std::endl;
+            std::cout << "Folder ID: " << it->first << " Folder Name: " << it->second.getFolderName() <<"  Number of Notes held:"<< it->second.printNoteCounter()<< std::endl;
         }
     }
 }
@@ -48,10 +48,7 @@ Folder *Database:: getFolder(int id) {
       if(it->first == id) {
          return &it->second;
       }
-      else {
-          std::cout << "Folder not found!" << std::endl;
-          return nullptr;
-      }
+
    }
  }
 

@@ -2,14 +2,14 @@
 #include<iostream>
 #include<map>
 
-class Folder {
+class Folder:public Subject {
 public:
 
       explicit Folder(int id);
 
    Folder()=default;
 
-    ~Folder() = default;
+
 
     void setFolderName();
 
@@ -29,7 +29,22 @@ public:
         [[nodiscard]] bool getIsEmpty()const;
 
     bool getIsLocked()const;
+
     void  setImportantName();
+
+
+    void notify() override;
+
+    void notify2() override;
+
+    void removeObserver(Observer* o) override;
+
+    void addobserver(Observer*o) override;
+
+    ~Folder() override =default ;
+
+    int printNoteCounter() const;
+
 
 private:
     int NumberOfNotes;
@@ -37,4 +52,5 @@ private:
     int FolderId;
     std::map<int, Note> notes;
     bool IsEmpty;
+    std::vector<Observer*> O;
 };

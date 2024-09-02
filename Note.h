@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-class Note {
+#include"Subject.h"
+class Note{
 public:
-
     explicit Note(int id);
     Note()=default;
 
@@ -19,6 +19,9 @@ public:
     void setNoteIsLocked();
 
     [[nodiscard]] bool getNoteIsLocked()const;
+
+
+
 private:
     std::string NoteName;
     std::string NoteContent;
