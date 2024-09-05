@@ -1,7 +1,9 @@
-cmake_minimum_required(VERSION 3.27)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.27)
+
 project(Project4)
 
 set(CMAKE_CXX_STANDARD 17)
+add_subdirectory(Test)
 
 add_executable(Project4 main.cpp
         Interface.cpp
@@ -16,4 +18,6 @@ add_executable(Project4 main.cpp
         Observer.h
         NoteCounterNotifier.cpp
         NoteCounterNotifier.h
-)
+        )
+
+
