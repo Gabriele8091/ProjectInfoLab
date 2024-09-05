@@ -19,6 +19,13 @@ add_executable(
         Subject.h
         Observer.h
         NoteCounterNotifier.h
+        Note.cpp
+        NoteCounterNotifier.cpp
+        Database.cpp
+        Folder.cpp
+        Interface.cpp
+        FolderTest.cpp
+        DatabaseTest.cpp
 
 )
 target_link_libraries(

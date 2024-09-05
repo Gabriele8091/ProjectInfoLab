@@ -26,6 +26,7 @@ public:
     void editNote();
 
     Note *getNote(int id);
+
         [[nodiscard]] bool getIsEmpty()const;
 
     bool getIsLocked()const;
