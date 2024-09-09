@@ -16,6 +16,7 @@ TEST(FolderTest, SetFolderName) {
 }
 
 
+
 TEST(FolderTest, AddNote) {
     Folder folder(1);
     folder.addNote();
