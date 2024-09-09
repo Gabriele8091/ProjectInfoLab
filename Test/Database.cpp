@@ -20,11 +20,12 @@ void Database::createFolder() {
         return;
     }
     else {
-        showFolders();
-        std::cout << "Enter the ID of the folder you want to remove: " << std::endl;
-        int id;
-        std::cin >> id;
-        datas.erase(id);
+       // showFolders();
+      //  std::cout << "Enter the ID of the folder you want to remove: " << std::endl;
+       // int id;
+       // std::cin >> id;
+        datas.erase(1);
+        Database::NumberOfFolders--;
         if(datas.empty()){
             IsEmpty = true;
         }

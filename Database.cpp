@@ -64,5 +64,3 @@ void Database::createImportantFolder() {
     NumberOfFolders++;
     IsEmpty = false;
 }
-
-

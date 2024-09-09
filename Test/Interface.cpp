@@ -56,7 +56,7 @@ void Interface::FolderMenu(Folder* folder) {
                 folder->addNote();
                 break;
             case 2:
-                folder->deleteNote();
+                folder->deleteNote(1);
                 break;
 
             case 3:

@@ -17,6 +17,9 @@ public:
     bool getIsEmpty()const ;
 
     void createImportantFolder();
+    int printFolderCounter() {
+        return NumberOfFolders;
+    }
 
 private:
     int NumberOfFolders;

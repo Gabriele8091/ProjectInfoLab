@@ -2,8 +2,8 @@
 #include "Folder.h"
 
 Folder::Folder(int id) {
-    std::cout << " Insert Folder Name: " << std::endl;
-    getline(std::cin, FolderName);
+    //std::cout << " Insert Folder Name: " << std::endl;
+    //getline(std::cin, FolderName);
     FolderId = id;
     IsEmpty = true;
     NumberOfNotes = 1;
@@ -42,24 +42,25 @@ void Folder::addNote() {
     notify();
 }
 
-void Folder::deleteNote() {
+void Folder::deleteNote(int id) {
     if (IsEmpty) {
         std::cout << "There are no notes to delete!" << std::endl;
         return;
     } else {
-        showNotes();
-        std::cout << "Enter the note id you want to delete: " << std::endl;
-        int id;
-        std::cin >> id;
+       // showNotes();
+       // std::cout << "Enter the note id you want to delete: " << std::endl;
+        //int id;
+       // std::cin >> id;
         for (auto it = notes.begin(); it != notes.end(); it++) {
             if (it->first == id && !it->second.getNoteIsLocked()) {
                 notes.erase(it);
-                std::cout << "Note deleted successfully!" << std::endl;
+                Folder::NumberOfNotes--;
+               // std::cout << "Note deleted successfully!" << std::endl;
                 break;
             }
             else
             {
-                std::cout << "Note is locked!" << std::endl;
+               // std::cout << "Note is locked!" << std::endl;
             }
         }
     }

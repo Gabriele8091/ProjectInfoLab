@@ -21,7 +21,7 @@ public:
 
     void addNote();
 
-    void deleteNote();
+    void deleteNote(int id);
 
     void editNote();
 
@@ -45,6 +45,10 @@ public:
     ~Folder() override =default ;
 
     int printNoteCounter() const;
+
+    int getNumberOfNotes()const{
+        return NumberOfNotes;
+    }
 
 
 private:

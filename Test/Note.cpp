@@ -5,19 +5,19 @@
 #include "Note.h"
 
 Note::Note(int id) {
-    std::cout<< "Insert Note name:" << std::endl;
-    getline(std::cin, NoteName);
-    std::cout<< "Insert Note content:" << std::endl;
-    getline(std::cin, NoteContent);
+   // std::cout<< "Insert Note name:" << std::endl;
+   // getline(std::cin, NoteName);
+   // std::cout<< "Insert Note content:" << std::endl;
+    //getline(std::cin, NoteContent);
     NoteId = id;
-    std::cout<< "Want to lock the note? 1=yes 0=no" << std::endl;
-    int choice;
-    std::cin >> choice;
-    if (choice == 1) {
-        IsLocked = true;
-    } else {
-        IsLocked = false;
-    }
+   // std::cout<< "Want to lock the note? 1=yes 0=no" << std::endl;
+  //  int choice;
+    //std::cin >> choice;
+    //if (choice == 1) {
+  //      IsLocked = true;
+   // } else {
+  //      IsLocked = false;
+  //  }
 }
 
 void Note::setNoteName() {
