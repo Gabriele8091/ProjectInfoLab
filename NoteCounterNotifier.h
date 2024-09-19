@@ -3,11 +3,9 @@
 class NoteCounterNotifier : public Observer{
 public:
 
-    void update() override;
+    void update(int c) override;
 
-    void update2() override;
     void printNoteCounter() const;
-
 
     ~NoteCounterNotifier() override= default;
 

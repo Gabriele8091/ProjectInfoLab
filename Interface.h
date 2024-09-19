@@ -9,6 +9,11 @@ public:
     void FolderMenu(Folder* folder);
 
     void NoteMenu(Note* note);
+
+    void ShowNotes(Folder* folder);
+
+    void ShowFolders(Database& db);
+
 private:
     bool IsRunning;
     bool IsFolderMenu;

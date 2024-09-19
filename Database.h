@@ -6,20 +6,20 @@ class Database {
 public:
     Database();
 
-    void createFolder();
+    void createFolder(std::string & name);
 
-    void removeFolder();
+    void removeFolder(int id);
 
-    void showFolders();
+   void showFolders();
 
     Folder* getFolder(int id);
 
-    bool getIsEmpty()const ;
+    bool getEmpty()const ;
 
     void createImportantFolder();
 
 private:
     int NumberOfFolders;
     std::map<int, Folder> datas;
-    bool IsEmpty;
+    bool Empty;
 };

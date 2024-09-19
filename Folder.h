@@ -1,41 +1,35 @@
 #include"Note.h"
 #include<iostream>
 #include<map>
-
+//cerca le note per contenuto del testo per importanti
 class Folder:public Subject {
 public:
 
-      explicit Folder(int id);
+    explicit Folder(int id,std::string name);
 
-   Folder()=default;
+    Folder()=default;
 
+    void setName(std::string name);
 
+    int getId()const;
 
-    void setFolderName();
-
-     int getFolderId()const;
-
-     std::string getFolderName();
+    std::string getName();
 
     void showNotes();
 
-    void addNote();
+    void addNote(std::string &name, std::string &content, bool &Locked,bool& Important);
 
-    void deleteNote();
-
-    void editNote();
+    void deleteNote(int id);
 
     Note *getNote(int id);
-        [[nodiscard]] bool getIsEmpty()const;
 
-    bool getIsLocked()const;
+    bool getEmpty()const;
+
+    bool getLocked()const;
 
     void  setImportantName();
 
-
-    void notify() override;
-
-    void notify2() override;
+    void notify(int c) override;
 
     void removeObserver(Observer* o) override;
 
@@ -51,6 +45,6 @@ private:
     std::string  FolderName;
     int FolderId;
     std::map<int, Note> notes;
-    bool IsEmpty;
-    std::vector<Observer*> O;
+    bool Empty;
+    std::list<Observer*> O;
 };

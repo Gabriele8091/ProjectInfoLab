@@ -1,30 +1,35 @@
 #include <iostream>
 #include <string>
 #include"Subject.h"
+
 class Note{
 public:
-    explicit Note(int id);
-    Note()=default;
+    explicit Note(int id, std::string Title, std::string Content, bool Locked, bool Important);
 
-    void setNoteName();
+    void setName(std::string name);
 
-    void setNoteContent();
+    void setContent(std::string content);
 
-     std::string getNoteName()const;
+    std::string getName()const;
 
-     std::string getNoteContent()const;
+    std::string getContent()const;
 
-     int getNoteId()const;
+    int getId()const;
 
-    void setNoteIsLocked();
+    void setLocked(bool locked);
 
-    [[nodiscard]] bool getNoteIsLocked()const;
+    bool getLocked()const;
+
+    bool getImportant()const;
 
 
 
 private:
+
     std::string NoteName;
     std::string NoteContent;
     int NoteId;
-    bool IsLocked;
+    bool Locked;
+    bool Important;
+
 };

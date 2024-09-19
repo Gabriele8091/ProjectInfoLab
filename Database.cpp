@@ -2,46 +2,30 @@
 #include "Database.h"
 
 Database::Database() {
-    IsEmpty = true;
+    Empty = true;
     NumberOfFolders =0;
     createImportantFolder();
 }
 
-void Database::createFolder() {
-    Folder folder(NumberOfFolders);
+void Database::createFolder(std::string & name) {
+    Folder folder(NumberOfFolders,name);
     NumberOfFolders++;
-    datas.insert(std::pair<int, Folder>(folder.getFolderId(), folder));
-    IsEmpty=false;
+    datas.insert(std::pair<int, Folder>(folder.getId(), folder));
+    Empty=false;
     }
 
-    void Database::removeFolder() {
-    if(IsEmpty){
-        std::cout << "There are no folders to remove!" << std::endl;
-        return;
-    }
-    else {
-        showFolders();
-        std::cout << "Enter the ID of the folder you want to remove: " << std::endl;
-        int id;
-        std::cin >> id;
-        datas.erase(id);
-        if(datas.empty()){
-            IsEmpty = true;
-        }
-    }
-}
-
-void Database::showFolders() {
-    if(IsEmpty){
-        std::cout << "There are no folders to show!" << std::endl;
-        return;
-    }
-    else{
+    void Database::removeFolder(int id) {
         for(auto it = datas.begin(); it != datas.end(); it++) {
-            std::cout << "Folder ID: " << it->first << " Folder Name: " << it->second.getFolderName() <<"  Number of Notes held:"<< it->second.printNoteCounter()<< std::endl;
+            if(it->first == id) {
+                datas.erase(it);
+                break;
+            }
+        }
+        if(datas.empty()){
+            Empty = true;
         }
     }
-}
+
 
 Folder *Database:: getFolder(int id) {
   for(auto it = datas.begin(); it != datas.end(); it++) {
@@ -53,8 +37,8 @@ Folder *Database:: getFolder(int id) {
  }
 
 
-bool Database::getIsEmpty()const {
-    return IsEmpty;
+bool Database::getEmpty()const {
+    return Empty;
 }
 
 void Database::createImportantFolder() {
@@ -62,5 +46,11 @@ void Database::createImportantFolder() {
     folder.setImportantName();
     datas.insert(std::pair<int, Folder>(NumberOfFolders, folder));
     NumberOfFolders++;
-    IsEmpty = false;
+    Empty = false;
+}
+
+void Database::showFolders() {
+    for(auto it = datas.begin(); it != datas.end(); it++) {
+        std::cout << "Folder ID: " << it->first << " Folder Name: " << it->second.getName() << " Number of Notes held:"<< it->second.printNoteCounter() << std::endl;
+    }
 }

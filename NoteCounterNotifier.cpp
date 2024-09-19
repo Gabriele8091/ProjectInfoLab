@@ -1,12 +1,8 @@
 
 #include "NoteCounterNotifier.h"
 
-void NoteCounterNotifier::update() {
-    noteCounter++;
-}
-
-void NoteCounterNotifier::update2() {
-    noteCounter--;
+void NoteCounterNotifier::update(int c) {
+   noteCounter=c;
 }
 
 void NoteCounterNotifier::printNoteCounter() const {
