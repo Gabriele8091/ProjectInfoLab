@@ -18,6 +18,16 @@ public:
 
     void createImportantFolder();
 
+    std::list<std::list<Note>> searchImportant() const;
+
+    std::list<std::list<Note>> searchNotesByName(const std::string& searchString) const;
+
+    std::list<std::list<Note>> searchNotesByText(const std::string& searchString) const;
+
+    std::list<Folder> searchFoldersByName(const std::string& searchString) const;
+
+
+
 private:
     int NumberOfFolders;
     std::map<int, Folder> datas;

@@ -1,7 +1,8 @@
 #include"Note.h"
 #include<iostream>
 #include<map>
-//cerca le note per contenuto del testo per importanti
+//unit test
+
 class Folder:public Subject {
 public:
 
@@ -13,11 +14,11 @@ public:
 
     int getId()const;
 
-    std::string getName();
+    std::string getName() const;
 
     void showNotes();
 
-    void addNote(std::string &name, std::string &content, bool &Locked,bool& Important);
+    void addNote(std::string &name, std::string &content, bool &Locked,bool &Important);
 
     void deleteNote(int id);
 
@@ -38,6 +39,12 @@ public:
     ~Folder() override =default ;
 
     int printNoteCounter() const;
+
+    std::list<Note> searchImportant() const;
+
+    std::list<Note> searchNotesByName(const std::string& searchString) const;
+
+    std::list<Note> searchNotesByText(const std::string& searchString) const;
 
 
 private:

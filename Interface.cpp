@@ -14,7 +14,7 @@ void Interface::ShowNotes(Folder* folder) {
 void Interface::Run(Database& db) {
     IsRunning = true;
     while (IsRunning) {
-        std::cout << "1. Create Folder\n2. Remove Folder\n3. Show Folders\n4. Choose a Folder\n5. Exit\n";
+        std::cout << "1. Create Folder\n2. Remove Folder\n3. Show Folders\n4. Choose a Folder\n5. Exit\n6. Show Important Notes\n";
         int choice;
         std::cin >> choice;
        std::cin.ignore();
@@ -64,6 +64,15 @@ void Interface::Run(Database& db) {
             case 5: {
                 std::cout<<"Goodbye!";
                 IsRunning = false;
+                break;
+            }
+            case 6: {
+                std::list<std::list<Note>> List = db.searchImportant();
+                for(auto it = List.begin(); it != List.end(); it++) {
+                    for(auto it2 = it->begin(); it2 != it->end(); it2++) {
+                        std::cout << "Note Name: " << it2->getName() << " Note Content: " << it2->getContent() << std::endl;
+                    }
+                }
                 break;
             }
 

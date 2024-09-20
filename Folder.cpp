@@ -17,7 +17,7 @@ int Folder::getId()const {
     return FolderId;
 }
 
-std::string Folder::getName() {
+std::string Folder::getName() const {
     return FolderName;
 }
 
@@ -94,4 +94,35 @@ void Folder::showNotes() {
     for(auto it = notes.begin(); it != notes.end(); it++) {
         std::cout << "Note ID: " << it->first << " Note Name: " << it->second.getName() << " Note Content: " << it->second.getContent() << std::endl;
     }
+}
+
+std::list<Note> Folder::searchImportant() const {
+    std::list<Note> ImportantNotes;
+    for(auto it = notes.begin(); it != notes.end(); it++) {
+        if(it->second.getImportant()) {
+            ImportantNotes.push_back(it->second);
+        }
+    }
+    return ImportantNotes;
+}
+
+
+std::list<Note> Folder::searchNotesByName(const std::string& searchString) const {
+    std::list<Note> Notes;
+    for(auto it = notes.begin(); it != notes.end(); it++) {
+        if (it->second.getName().find(searchString) != std::string::npos) {
+            Notes.push_back(it->second);
+        }
+    }
+    return Notes;
+}
+
+std::list<Note> Folder::searchNotesByText(const std::string& searchString) const {
+    std::list<Note> Notes;
+    for(auto it = notes.begin(); it != notes.end(); it++) {
+        if (it->second.getContent().find(searchString) != std::string::npos) {
+            Notes.push_back(it->second);
+        }
+    }
+    return Notes;
 }

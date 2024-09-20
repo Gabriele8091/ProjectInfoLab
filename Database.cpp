@@ -54,3 +54,38 @@ void Database::showFolders() {
         std::cout << "Folder ID: " << it->first << " Folder Name: " << it->second.getName() << " Number of Notes held:"<< it->second.printNoteCounter() << std::endl;
     }
 }
+
+std::list<std::list<Note>> Database::searchImportant() const {
+    std::list<std::list<Note>> List;
+    for(auto it = datas.begin(); it != datas.end(); it++) {
+        List.push_back(it->second.searchImportant());
+    }
+    return List;
+}
+
+std::list<std::list<Note>> Database::searchNotesByName(const std::string& searchString) const {
+    std::list<std::list<Note>> resultNotes;
+    for(auto it = datas.begin(); it != datas.end(); it++) {
+        resultNotes.push_back(it->second.searchNotesByName(searchString));
+    }
+    return resultNotes;
+}
+
+std::list<std::list<Note>> Database::searchNotesByText(const std::string& searchString) const {
+    std::list<std::list<Note>> resultNotes;
+    for(auto it = datas.begin(); it != datas.end(); it++) {
+        resultNotes.push_back(it->second.searchNotesByText(searchString));
+    }
+    return resultNotes;
+}
+
+std::list<Folder> Database::searchFoldersByName(const std::string& searchString) const {
+    std::list<Folder> resultFolders;
+    for(auto it = datas.begin(); it != datas.end(); it++) {
+        if (it->second.getName().find(searchString) != std::string::npos) {
+            resultFolders.push_back(it->second);
+        }
+    }
+    return resultFolders;
+}
+
