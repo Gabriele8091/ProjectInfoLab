@@ -189,22 +189,15 @@ build Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.obj: CXX_COMPILER__runAllT
   OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
   OBJECT_FILE_DIR = Test\CMakeFiles\runAllTests.dir
 
-build Test/CMakeFiles/runAllTests.dir/NoteTest.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/NoteTest.cpp || cmake_object_order_depends_target_runAllTests
-  DEP_FILE = Test\CMakeFiles\runAllTests.dir\NoteTest.cpp.obj.d
+build Test/CMakeFiles/runAllTests.dir/DatabaseTest.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/DatabaseTest.cpp || cmake_object_order_depends_target_runAllTests
+  DEP_FILE = Test\CMakeFiles\runAllTests.dir\DatabaseTest.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
   OBJECT_FILE_DIR = Test\CMakeFiles\runAllTests.dir
 
-build Test/CMakeFiles/runAllTests.dir/Note.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/Note.cpp || cmake_object_order_depends_target_runAllTests
-  DEP_FILE = Test\CMakeFiles\runAllTests.dir\Note.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
-  OBJECT_FILE_DIR = Test\CMakeFiles\runAllTests.dir
-
-build Test/CMakeFiles/runAllTests.dir/NoteCounterNotifier.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/NoteCounterNotifier.cpp || cmake_object_order_depends_target_runAllTests
-  DEP_FILE = Test\CMakeFiles\runAllTests.dir\NoteCounterNotifier.cpp.obj.d
+build Test/CMakeFiles/runAllTests.dir/FolderTest.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/FolderTest.cpp || cmake_object_order_depends_target_runAllTests
+  DEP_FILE = Test\CMakeFiles\runAllTests.dir\FolderTest.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
@@ -224,22 +217,8 @@ build Test/CMakeFiles/runAllTests.dir/Folder.cpp.obj: CXX_COMPILER__runAllTests_
   OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
   OBJECT_FILE_DIR = Test\CMakeFiles\runAllTests.dir
 
-build Test/CMakeFiles/runAllTests.dir/Interface.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/Interface.cpp || cmake_object_order_depends_target_runAllTests
-  DEP_FILE = Test\CMakeFiles\runAllTests.dir\Interface.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
-  OBJECT_FILE_DIR = Test\CMakeFiles\runAllTests.dir
-
-build Test/CMakeFiles/runAllTests.dir/FolderTest.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/FolderTest.cpp || cmake_object_order_depends_target_runAllTests
-  DEP_FILE = Test\CMakeFiles\runAllTests.dir\FolderTest.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
-  OBJECT_FILE_DIR = Test\CMakeFiles\runAllTests.dir
-
-build Test/CMakeFiles/runAllTests.dir/DatabaseTest.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/DatabaseTest.cpp || cmake_object_order_depends_target_runAllTests
-  DEP_FILE = Test\CMakeFiles\runAllTests.dir\DatabaseTest.cpp.obj.d
+build Test/CMakeFiles/runAllTests.dir/Note.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/Note.cpp || cmake_object_order_depends_target_runAllTests
+  DEP_FILE = Test\CMakeFiles\runAllTests.dir\Note.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
@@ -253,7 +232,7 @@ build Test/CMakeFiles/runAllTests.dir/DatabaseTest.cpp.obj: CXX_COMPILER__runAll
 #############################################
 # Link the executable Test\runAllTests.exe
 
-build Test/runAllTests.exe Test/runAllTests[1]_tests.cmake | ${cmake_ninja_workdir}Test/runAllTests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__runAllTests_Debug Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.obj Test/CMakeFiles/runAllTests.dir/NoteTest.cpp.obj Test/CMakeFiles/runAllTests.dir/Note.cpp.obj Test/CMakeFiles/runAllTests.dir/NoteCounterNotifier.cpp.obj Test/CMakeFiles/runAllTests.dir/Database.cpp.obj Test/CMakeFiles/runAllTests.dir/Folder.cpp.obj Test/CMakeFiles/runAllTests.dir/Interface.cpp.obj Test/CMakeFiles/runAllTests.dir/FolderTest.cpp.obj Test/CMakeFiles/runAllTests.dir/DatabaseTest.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Test/runAllTests.exe Test/runAllTests[1]_tests.cmake | ${cmake_ninja_workdir}Test/runAllTests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__runAllTests_Debug Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.obj Test/CMakeFiles/runAllTests.dir/DatabaseTest.cpp.obj Test/CMakeFiles/runAllTests.dir/FolderTest.cpp.obj Test/CMakeFiles/runAllTests.dir/Database.cpp.obj Test/CMakeFiles/runAllTests.dir/Folder.cpp.obj Test/CMakeFiles/runAllTests.dir/Note.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = Test\CMakeFiles\runAllTests.dir

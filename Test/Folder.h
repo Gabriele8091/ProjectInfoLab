@@ -1,54 +1,50 @@
 #include"Note.h"
 #include<iostream>
 #include<map>
+//unit test
 
-class Folder:public Subject {
+class Folder{
 public:
 
-      explicit Folder(int id);
+    explicit Folder(int id,std::string name);
 
-   Folder()=default;
+    Folder()=default;
 
+    void setName(std::string name);
 
+    int getId()const;
 
-    void setFolderName();
-
-     int getFolderId()const;
-
-     std::string getFolderName();
+    std::string getName() const;
 
     void showNotes();
 
-    void addNote();
+    void addNote(std::string &name, std::string &content, bool &Locked,bool &Important);
 
     void deleteNote(int id);
 
-    void editNote();
-
     Note *getNote(int id);
 
-        [[nodiscard]] bool getIsEmpty()const;
+    bool getEmpty()const;
 
-    bool getIsLocked()const;
+    bool getLocked()const;
 
     void  setImportantName();
 
+   // void notify(int c) override;
 
-    void notify() override;
+   // void removeObserver(Observer* o) override;
 
-    void notify2() override;
+   // void addobserver(Observer*o) override;
 
-    void removeObserver(Observer* o) override;
-
-    void addobserver(Observer*o) override;
-
-    ~Folder() override =default ;
+   // ~Folder() override =default ;
 
     int printNoteCounter() const;
 
-    int getNumberOfNotes()const{
-        return NumberOfNotes;
-    }
+    std::list<Note> searchImportant() const;
+
+    std::list<Note> searchNotesByName(const std::string& searchString) const;
+
+    std::list<Note> searchNotesByText(const std::string& searchString) const;
 
 
 private:
@@ -56,6 +52,6 @@ private:
     std::string  FolderName;
     int FolderId;
     std::map<int, Note> notes;
-    bool IsEmpty;
-    std::vector<Observer*> O;
+    bool Empty;
+    std::list<Observer*> O;
 };

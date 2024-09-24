@@ -4,63 +4,52 @@
 
 #include "Note.h"
 
-Note::Note(int id) {
-   // std::cout<< "Insert Note name:" << std::endl;
-   // getline(std::cin, NoteName);
-   // std::cout<< "Insert Note content:" << std::endl;
-    //getline(std::cin, NoteContent);
-    NoteId = id;
-   // std::cout<< "Want to lock the note? 1=yes 0=no" << std::endl;
-  //  int choice;
-    //std::cin >> choice;
-    //if (choice == 1) {
-  //      IsLocked = true;
-   // } else {
-  //      IsLocked = false;
-  //  }
+Note::Note(int id, std::string Title, std::string Content, bool Locked, bool Important) {
+    this->NoteName=Title;
+    this->NoteContent=Content;
+    this->NoteId=id;
+    this->Locked=Locked;
+    this->Important=Important;
 }
 
-void Note::setNoteName() {
-    std::cout<< "Insert Note name:" << std::endl;
-    getline(std::cin, NoteName);
+
+void Note::setName(std::string name) {
+    NoteName=name;
+
 }
 
-void Note::setNoteContent() {
-    std::cout<< "Insert Note content:" << std::endl;
-    getline(std::cin, NoteContent);
+void Note::setContent(std::string content) {
+    NoteContent=content;
+
 }
 
-std::string Note::getNoteName() const {
+std::string Note::getName() const {
     return NoteName;
 }
 
-std::string Note::getNoteContent() const {
+std::string Note::getContent() const {
     return NoteContent;
 }
 
 
-int Note::getNoteId() const {
+int Note::getId() const {
     return NoteId;
 }
 
 
-bool Note::getNoteIsLocked() const {
-    return IsLocked;
+bool Note::getLocked() const {
+    return Locked;
 }
 
 
 
-void Note::setNoteIsLocked() {
-    std::cout<< "Want to lock the note? 1=yes 0=no" << std::endl;
-    int choice;
-    std::cin >> choice;
-    if (choice == 1) {
-        IsLocked = true;
-    } else {
-        IsLocked = false;
-    }
+void Note::setLocked(bool locked) {
+    Locked=locked;
 }
 
+bool Note::getImportant() const {
+    return Important;
+}
 
 
 

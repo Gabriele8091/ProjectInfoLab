@@ -11,21 +11,14 @@ enable_testing()
 add_executable(
         runAllTests
         runAllTests.cpp
-        NoteTest.cpp
-        Note.h
-        Database.h
-        Folder.h
-        Interface.h
-        Subject.h
-        Observer.h
-        NoteCounterNotifier.h
-        Note.cpp
-        NoteCounterNotifier.cpp
-        Database.cpp
-        Folder.cpp
-        Interface.cpp
-        FolderTest.cpp
         DatabaseTest.cpp
+        FolderTest.cpp
+        Database.h
+        Database.cpp
+        Folder.h
+        Folder.cpp
+        Note.h
+        Note.cpp
 
 )
 target_link_libraries(

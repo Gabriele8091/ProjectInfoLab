@@ -1,28 +1,35 @@
 #include<map>
 #include<iostream>
-#include"NoteCounterNotifier.h"
+#include"Folder.h"
 
 class Database {
 public:
     Database();
 
-    void createFolder();
+    void createFolder(std::string & name);
 
-    void removeFolder();
+    void removeFolder(int id);
 
-    void showFolders();
+   void showFolders();
 
     Folder* getFolder(int id);
 
-    bool getIsEmpty()const ;
+    bool getEmpty()const ;
 
     void createImportantFolder();
-    int printFolderCounter() {
-        return NumberOfFolders;
-    }
+
+    std::list<std::list<Note>> searchImportant() const;
+
+    std::list<std::list<Note>> searchNotesByName(const std::string& searchString) const;
+
+    std::list<std::list<Note>> searchNotesByText(const std::string& searchString) const;
+
+    std::list<Folder> searchFoldersByName(const std::string& searchString) const;
+
+
 
 private:
     int NumberOfFolders;
     std::map<int, Folder> datas;
-    bool IsEmpty;
+    bool Empty;
 };

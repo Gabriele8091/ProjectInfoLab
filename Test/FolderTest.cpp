@@ -1,37 +1,72 @@
-#include"gtest/gtest.h"
-#include"Folder.h"
-#include <sstream>
-#include <iostream>
+#include <gtest/gtest.h>
+#include "Folder.h"
+#include <gtest/gtest.h>
 
 
-TEST(FolderTest, SetFolderName) {
-    Folder n;
+class FolderTest : public ::testing::Test {
+protected:
+    void SetUp() override {
+        folder = new Folder(1, "Test Folder");
+    }
 
-    std::istringstream simulatedInput("Cartella di esempio\n");
-    std::cin.rdbuf(simulatedInput.rdbuf());
+    void TearDown() override {
+        delete folder;
+    }
 
-    n.setFolderName();
+    Folder* folder;
+};
 
-    EXPECT_EQ(n.getFolderName(), "Cartella di esempio");
+
+TEST_F(FolderTest, SearchNotesByName) {
+    std::string title1 = "First Note";
+    std::string content1 = "Some Content";
+    bool locked = false;
+    bool important = false;
+
+    std::string title2 = "Special Note";
+    std::string content2 = "More Content";
+
+    folder->addNote(title1, content1, locked, important);
+    folder->addNote(title2, content2, locked, important);
+
+    std::list<Note> result = folder->searchNotesByName("Special");
+
+    ASSERT_EQ(result.size(), 1);
+    ASSERT_EQ(result.front().getName(), "Special Note");
 }
 
 
+TEST_F(FolderTest, SearchNotesByText) {
+    std::string title = "Note";
+    std::string content = "Specific Text";
+    bool locked = false;
+    bool important = false;
 
-TEST(FolderTest, AddNote) {
-    Folder folder(1);
-    folder.addNote();
-    EXPECT_EQ(folder.getNumberOfNotes(), 2);
+    folder->addNote(title, content, locked, important);
+
+    std::list<Note> result = folder->searchNotesByText("Specific");
+
+    ASSERT_EQ(result.size(), 1);
+    ASSERT_EQ(result.front().getContent(), "Specific Text");
 }
 
 
+TEST_F(FolderTest, SearchImportantNotes) {
+    std::string title1 = "Regular Note";
+    std::string content1 = "Regular Content";
+    bool locked = false;
+    bool important1 = false;
 
-TEST(FolderTest, DeleteNote) {
+    std::string title2 = "Important Note";
+    std::string content2 = "Important Content";
+    bool important2 = true;
 
-    Folder folder(1);
+    folder->addNote(title1, content1, locked, important1);
+    folder->addNote(title2, content2, locked, important2);
 
-    folder.addNote();
+    std::list<Note> result = folder->searchImportant();
 
-    folder.deleteNote(1);
-    EXPECT_EQ(folder.getNumberOfNotes(), 1);
+    ASSERT_EQ(result.size(), 1);
+    ASSERT_EQ(result.front().getName(), "Important Note");
+    ASSERT_TRUE(result.front().getImportant());
 }
-
