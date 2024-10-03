@@ -30,3 +30,16 @@
 982	3099	7488942078994035	Test/runAllTests.exe	6f34a40750361cd
 982	3099	7488942078994035	Test/runAllTests[1]_tests.cmake	6f34a40750361cd
 982	3099	7488942078994035	C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/Test/runAllTests[1]_tests.cmake	6f34a40750361cd
+19	411	7488943297351995	CMakeFiles/Project4.dir/NoteCounterNotifier.cpp.obj	4a323393cd3f9012
+6	475	7488943297231985	CMakeFiles/Project4.dir/main.cpp.obj	aac51eb994feb323
+10	509	7488943297261903	CMakeFiles/Project4.dir/Interface.cpp.obj	231c349fa8433142
+17	641	7488943297332076	CMakeFiles/Project4.dir/Folder.cpp.obj	c9f6ee431772be2c
+13	734	7488943297292257	CMakeFiles/Project4.dir/Database.cpp.obj	a3f75572d957d602
+734	876	7488943304503255	Project4.exe	e1eb69c0bacb90cf
+27	694	7496760394590199	Test/CMakeFiles/runAllTests.dir/Folder.cpp.obj	f11db72e07fd614
+25	754	7496760394560279	Test/CMakeFiles/runAllTests.dir/Database.cpp.obj	8324f57593527599
+20	1493	7496760394519723	Test/CMakeFiles/runAllTests.dir/FolderTest.cpp.obj	485645acc757f28b
+14	1496	7496760394459293	Test/CMakeFiles/runAllTests.dir/DatabaseTest.cpp.obj	4d09d29ac8237be1
+1496	6093	7496760455160361	Test/runAllTests.exe	6f34a40750361cd
+1496	6093	7496760455160361	Test/runAllTests[1]_tests.cmake	6f34a40750361cd
+1496	6093	7496760455160361	C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/Test/runAllTests[1]_tests.cmake	6f34a40750361cd
