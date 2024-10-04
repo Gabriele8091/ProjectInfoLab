@@ -2,7 +2,6 @@
 #include <string>
 #include"Subject.h"
 
-// testa il NULL, unit test cancellazione note modifica..., testa anche il caso in cui non ci siano le note cercate
 class Note {
 public:
     explicit Note(int id, const std::string &Title, const std::string &Content, bool &Locked, bool &Important);

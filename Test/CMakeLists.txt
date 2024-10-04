@@ -17,8 +17,7 @@ add_executable(
         ${CMAKE_SOURCE_DIR}/Folder.cpp
         ${CMAKE_SOURCE_DIR}/Note.cpp
         ${CMAKE_SOURCE_DIR}/NoteCounterNotifier.cpp
-
-
+        NoteTest.cpp
 
 
 )

@@ -237,6 +237,13 @@ build Test/CMakeFiles/runAllTests.dir/__/NoteCounterNotifier.cpp.obj: CXX_COMPIL
   OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
   OBJECT_FILE_DIR = Test\CMakeFiles\runAllTests.dir\__
 
+build Test/CMakeFiles/runAllTests.dir/NoteTest.cpp.obj: CXX_COMPILER__runAllTests_unscanned_Debug C$:/Users/gabri/CLionProjects/Project4/Test/NoteTest.cpp || cmake_object_order_depends_target_runAllTests
+  DEP_FILE = Test\CMakeFiles\runAllTests.dir\NoteTest.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/gabri/CLionProjects/Project4 -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/gabri/CLionProjects/Project4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = Test\CMakeFiles\runAllTests.dir
+  OBJECT_FILE_DIR = Test\CMakeFiles\runAllTests.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target runAllTests
@@ -245,7 +252,7 @@ build Test/CMakeFiles/runAllTests.dir/__/NoteCounterNotifier.cpp.obj: CXX_COMPIL
 #############################################
 # Link the executable Test\runAllTests.exe
 
-build Test/runAllTests.exe Test/runAllTests[1]_tests.cmake | ${cmake_ninja_workdir}Test/runAllTests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__runAllTests_Debug Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.obj Test/CMakeFiles/runAllTests.dir/DatabaseTest.cpp.obj Test/CMakeFiles/runAllTests.dir/FolderTest.cpp.obj Test/CMakeFiles/runAllTests.dir/__/Database.cpp.obj Test/CMakeFiles/runAllTests.dir/__/Folder.cpp.obj Test/CMakeFiles/runAllTests.dir/__/Note.cpp.obj Test/CMakeFiles/runAllTests.dir/__/NoteCounterNotifier.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build Test/runAllTests.exe Test/runAllTests[1]_tests.cmake | ${cmake_ninja_workdir}Test/runAllTests[1]_tests.cmake: CXX_EXECUTABLE_LINKER__runAllTests_Debug Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.obj Test/CMakeFiles/runAllTests.dir/DatabaseTest.cpp.obj Test/CMakeFiles/runAllTests.dir/FolderTest.cpp.obj Test/CMakeFiles/runAllTests.dir/__/Database.cpp.obj Test/CMakeFiles/runAllTests.dir/__/Folder.cpp.obj Test/CMakeFiles/runAllTests.dir/__/Note.cpp.obj Test/CMakeFiles/runAllTests.dir/__/NoteCounterNotifier.cpp.obj Test/CMakeFiles/runAllTests.dir/NoteTest.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = Test\CMakeFiles\runAllTests.dir

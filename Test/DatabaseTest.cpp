@@ -26,7 +26,7 @@ TEST_F(DatabaseTest, SearchFoldersByName) {
 
 
 TEST_F(DatabaseTest, SearchImportantNotes) {
-    Folder* folder = db.getFolder(0);
+    Folder *folder = db.getFolder(0);
     std::string title = "Important Note";
     std::string content = "Important Content";
     bool locked = false;
@@ -37,4 +37,28 @@ TEST_F(DatabaseTest, SearchImportantNotes) {
 
     ASSERT_EQ(result.front().size(), 1);
     ASSERT_EQ(result.front().front().getName(), "Important Note");
+}
+
+TEST_F(DatabaseTest, SearchImportantNotesNotFound) {
+    Folder *folder = db.getFolder(0);
+    std::string title = "Important Note";
+    std::string content = "Important Content";
+    bool locked = false;
+    bool important = false;
+
+    folder->addNote(title, content, locked, important);
+    std::list<std::list<Note>> result = db.searchImportant();
+
+    ASSERT_EQ(result.front().size(), 0);
+}
+
+TEST_F(DatabaseTest, SearchFolderByNameNotFound) {
+    std::list<Folder> result = db.searchFoldersByName("Not Found");
+    ASSERT_EQ(result.size(), 0);
+}
+
+
+TEST_F(DatabaseTest, GetFolderVoid) {
+    Folder *folder = db.getFolder(4);
+    ASSERT_EQ(folder, nullptr);
 }
