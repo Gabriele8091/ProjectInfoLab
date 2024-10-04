@@ -4,22 +4,22 @@
 
 #include "Note.h"
 
-Note::Note(int id, std::string Title, std::string Content, bool Locked, bool Important) {
-    this->NoteName=Title;
-    this->NoteContent=Content;
-    this->NoteId=id;
-    this->Locked=Locked;
-    this->Important=Important;
+Note::Note(int id, const std::string &Title, const std::string &Content, bool &Locked, bool &Important) {
+    this->NoteName = Title;
+    this->NoteContent = Content;
+    this->NoteId = id;
+    this->Locked = Locked;
+    this->Important = Important;
 }
 
 
-void Note::setName(std::string name) {
-    NoteName=name;
+void Note::setName(std::string &name) {
+    NoteName = name;
 
 }
 
-void Note::setContent(std::string content) {
-    NoteContent=content;
+void Note::setContent(std::string &content) {
+    NoteContent = content;
 
 }
 
@@ -42,9 +42,8 @@ bool Note::getLocked() const {
 }
 
 
-
 void Note::setLocked(bool locked) {
-    Locked=locked;
+    Locked = locked;
 }
 
 bool Note::getImportant() const {

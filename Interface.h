@@ -4,15 +4,15 @@ class Interface {
 public:
     Interface() : IsRunning(false), IsFolderMenu(false), IsNoteMenu(false) {};
 
-    void Run(Database& db);
+    void Run(Database &db);
 
-    void FolderMenu(Folder* folder);
+    void FolderMenu(Folder *folder);
 
-    void NoteMenu(Note* note);
+    void NoteMenu(Note *note);
 
-    void ShowNotes(Folder* folder);
+    void ShowNotes(Folder *folder);
 
-    void ShowFolders(Database& db);
+    void ShowFolders(Database &db);
 
 private:
     bool IsRunning;

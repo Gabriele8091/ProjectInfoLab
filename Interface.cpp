@@ -3,21 +3,23 @@
 //
 
 #include "Interface.h"
-void Interface::ShowFolders(Database& db) {
+
+void Interface::ShowFolders(Database &db) {
     db.showFolders();
 }
 
-void Interface::ShowNotes(Folder* folder) {
+void Interface::ShowNotes(Folder *folder) {
     folder->showNotes();
 }
 
-void Interface::Run(Database& db) {
+void Interface::Run(Database &db) {
     IsRunning = true;
     while (IsRunning) {
-        std::cout << "1. Create Folder\n2. Remove Folder\n3. Show Folders\n4. Choose a Folder\n5. Exit\n6. Show Important Notes\n";
+        std::cout
+                << "1. Create Folder\n2. Remove Folder\n3. Show Folders\n4. Choose a Folder\n5. Exit\n6. Show Important Notes\n";
         int choice;
         std::cin >> choice;
-       std::cin.ignore();
+        std::cin.ignore();
         switch (choice) {
             case 1: {
                 std::string Title;
@@ -62,15 +64,16 @@ void Interface::Run(Database& db) {
                 }
             }
             case 5: {
-                std::cout<<"Goodbye!";
+                std::cout << "Goodbye!";
                 IsRunning = false;
                 break;
             }
             case 6: {
                 std::list<std::list<Note>> List = db.searchImportant();
-                for(auto it = List.begin(); it != List.end(); it++) {
-                    for(auto it2 = it->begin(); it2 != it->end(); it2++) {
-                        std::cout << "Note Name: " << it2->getName() << " Note Content: " << it2->getContent() << std::endl;
+                for (auto it = List.begin(); it != List.end(); it++) {
+                    for (auto it2 = it->begin(); it2 != it->end(); it2++) {
+                        std::cout << "Note Name: " << it2->getName() << " Note Content: " << it2->getContent()
+                                  << std::endl;
                     }
                 }
                 break;
@@ -83,10 +86,11 @@ void Interface::Run(Database& db) {
     }
 }
 
-void Interface::FolderMenu(Folder* folder) {
+void Interface::FolderMenu(Folder *folder) {
     IsFolderMenu = true;
     while (IsFolderMenu) {
-        std::cout << "1. Create Note\n2. Remove Note\n3. Show Notes\n4. Choose a Note\n5. Edit the folder name\n6. Exit\n";
+        std::cout
+                << "1. Create Note\n2. Remove Note\n3. Show Notes\n4. Choose a Note\n5. Edit the folder name\n6. Exit\n";
         int choice;
         std::cin >> choice;
         std::cin.ignore();
@@ -107,15 +111,14 @@ void Interface::FolderMenu(Folder* folder) {
                 } else {
                     Locked = false;
                 }
-                std::cout<<"Has the note to be important? (1/0): ";
+                std::cout << "Has the note to be important? (1/0): ";
                 int b;
                 bool important;
-                std::cin>>b;
-                if(b==1){
-                    important=true;
-                }
-                else{
-                    important=false;
+                std::cin >> b;
+                if (b == 1) {
+                    important = true;
+                } else {
+                    important = false;
                 }
 
                 folder->addNote(Title, Content, Locked, important);
@@ -157,13 +160,14 @@ void Interface::FolderMenu(Folder* folder) {
                     break;
                 }
             }
-                case 5:{
-                    std::cout<<"That's the folder name, edit it as you want: "<<std::endl<<folder->getName()<<std::endl;
-                    std::string name;
-                    std::getline(std::cin, name);
-                    folder->setName(name);
-                    break;
-                }
+            case 5: {
+                std::cout << "That's the folder name, edit it as you want: " << std::endl << folder->getName()
+                          << std::endl;
+                std::string name;
+                std::getline(std::cin, name);
+                folder->setName(name);
+                break;
+            }
             case 6: {
                 IsFolderMenu = false;
                 break;
@@ -175,7 +179,7 @@ void Interface::FolderMenu(Folder* folder) {
     }
 }
 
-void Interface::NoteMenu(Note* note) {
+void Interface::NoteMenu(Note *note) {
     IsNoteMenu = true;
     while (IsNoteMenu) {
         std::cout << "1. Edit Note Name\n2. Edit Note Content\n3. Lock/Unlock Note\n4. Print Note \n5. Exit";
@@ -184,12 +188,11 @@ void Interface::NoteMenu(Note* note) {
         std::cin.ignore();
         switch (choice) {
             case 1:
-                if(note->getLocked()){
+                if (note->getLocked()) {
                     std::cout << "Note is locked!" << std::endl;
                     break;
-                }
-                else{
-                    std::cout<<"That's the note name, edit it as you want: "<<std::endl<<note->getName();
+                } else {
+                    std::cout << "That's the note name, edit it as you want: " << std::endl << note->getName();
                     std::string name;
                     std::getline(std::cin, name);
                     note->setName(name);
@@ -197,28 +200,26 @@ void Interface::NoteMenu(Note* note) {
                 }
 
             case 2:
-                if(note->getLocked()){
+                if (note->getLocked()) {
                     std::cout << "Note is locked!" << std::endl;
                     break;
-                }
-                else{
-                    std::cout<<"That's the note content, edit it as you want: "<<std::endl<<note->getContent();
+                } else {
+                    std::cout << "That's the note content, edit it as you want: " << std::endl << note->getContent();
                     std::string content;
                     std::getline(std::cin, content);
                     note->setContent(content);
                     break;
                 }
             case 3:
-               bool locked;
-               int i;
-               std::cout<<"Do you want to lock the note? (1/0): ";
-               std::cin>>i;
-                if(i==1){
-                    locked=true;
+                bool locked;
+                int i;
+                std::cout << "Do you want to lock the note? (1/0): ";
+                std::cin >> i;
+                if (i == 1) {
+                    locked = true;
                     note->setLocked(locked);
-                }
-                else{
-                    locked=false;
+                } else {
+                    locked = false;
                     note->setLocked(locked);
                 }
                 break;

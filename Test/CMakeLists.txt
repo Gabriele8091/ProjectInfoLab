@@ -13,12 +13,13 @@ add_executable(
         runAllTests.cpp
         DatabaseTest.cpp
         FolderTest.cpp
-        Database.h
-        Database.cpp
-        Folder.h
-        Folder.cpp
-        Note.h
-        Note.cpp
+        ${CMAKE_SOURCE_DIR}/Database.cpp
+        ${CMAKE_SOURCE_DIR}/Folder.cpp
+        ${CMAKE_SOURCE_DIR}/Note.cpp
+        ${CMAKE_SOURCE_DIR}/NoteCounterNotifier.cpp
+
+
+
 
 )
 target_link_libraries(

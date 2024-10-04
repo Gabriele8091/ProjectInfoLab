@@ -6,7 +6,7 @@ class Database {
 public:
     Database();
 
-    void createFolder(std::string & name);
+    void createFolder(const std::string & name);
 
     void removeFolder(int id);
 

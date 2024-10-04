@@ -2,27 +2,26 @@
 #include <string>
 #include"Subject.h"
 
-class Note{
+// testa il NULL, unit test cancellazione note modifica..., testa anche il caso in cui non ci siano le note cercate
+class Note {
 public:
-    explicit Note(int id, std::string Title, std::string Content, bool Locked, bool Important);
+    explicit Note(int id, const std::string &Title, const std::string &Content, bool &Locked, bool &Important);
 
-    void setName(std::string name);
+    void setName(std::string &name);
 
-    void setContent(std::string content);
+    void setContent(std::string &content);
 
-    std::string getName()const;
+    std::string getName() const;
 
-    std::string getContent()const;
+    std::string getContent() const;
 
-    int getId()const;
+    int getId() const;
 
     void setLocked(bool locked);
 
-    bool getLocked()const;
+    bool getLocked() const;
 
-    bool getImportant()const;
-
-
+    bool getImportant() const;
 
 private:
 
