@@ -14,12 +14,22 @@ Note::Note(int id, const std::string &Title, const std::string &Content, bool &L
 
 
 void Note::setName(std::string &name) {
-    NoteName = name;
+   if(!Locked){
+       NoteName = name;
+   }
+   else{
+       std::cout << "Note is locked" << std::endl;
+   }
 
 }
 
 void Note::setContent(std::string &content) {
-    NoteContent = content;
+    if(!Locked){
+        NoteContent = content;
+    }
+    else{
+        std::cout << "Note is locked" << std::endl;
+    }
 
 }
 

@@ -35,3 +35,11 @@ TEST_F(NoteTest, SetNoteLocked) {
     note->setLocked(locked);
     ASSERT_EQ(note->getLocked(), true);
 }
+
+TEST_F(NoteTest, ModifyLocked){
+    bool locked = true;
+    note->setLocked(locked);
+    std::string content = "New Content";
+    note->setContent(content);
+    ASSERT_EQ(note->getContent(), "Some Content");
+}

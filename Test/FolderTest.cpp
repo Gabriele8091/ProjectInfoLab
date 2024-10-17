@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "Folder.h"
 
-
+// testa se cancella o modifica le note bloccate
 class FolderTest : public ::testing::Test {
 protected:
     void SetUp() override {
@@ -145,4 +145,17 @@ TEST_F(FolderTest, DeleteNote) {
     std::list<Note> result = folder->searchNotesByName("Note");
 
     ASSERT_EQ(result.size(), 0);
+}
+
+TEST_F(FolderTest,LockedDelete){
+    std::string title = "Note";
+    std::string content = "Content";
+    bool locked = true;
+    bool important = false;
+    folder->addNote(title, content, locked, important);
+
+    folder->deleteNote(0);
+    std::list<Note> result = folder->searchNotesByName("Note");
+
+    ASSERT_EQ(result.size(), 1);
 }

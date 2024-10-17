@@ -32,11 +32,16 @@ void Folder::addNote(const std::string &title, const std::string &content, bool 
 void Folder::deleteNote(int id) {
     for (auto it = notes.begin(); it != notes.end(); it++) {
         if (it->first == id) {
+            if(!it->second.getLocked())
+            {
             notes.erase(it);
+            NumberOfNotes--;
+            }
+            else
+                std::cout << "Note is locked" << std::endl;
             break;
         }
     }
-    NumberOfNotes--;
     if (NumberOfNotes == 0) {
         Empty = true;
     }
